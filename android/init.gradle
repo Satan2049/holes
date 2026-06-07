@@ -1,0 +1,13 @@
+// Mirrors for environments where dl.google.com is unreachable.
+def mirrorRepos = { handler ->
+    handler.maven { url 'https://maven.aliyun.com/repository/google' }
+    handler.maven { url 'https://maven.aliyun.com/repository/central' }
+    handler.maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+}
+
+gradle.beforeSettings { settings ->
+    mirrorRepos(settings.pluginManagement.repositories)
+    if (settings.dependencyResolutionManagement != null) {
+        mirrorRepos(settings.dependencyResolutionManagement.repositories)
+    }
+}

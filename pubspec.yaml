@@ -1,0 +1,49 @@
+name: holes
+description: Live public camera browser — search, filter, skip. No map.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+  video_player: ^2.10.0
+  shared_preferences: ^2.5.3
+  url_launcher: ^6.3.1
+  webview_flutter: ^4.13.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+  # Splash assets generated — re-add to regenerate: flutter pub add --dev flutter_native_splash
+
+flutter_launcher_icons:
+  android: true
+  image_path: assets/icon/app_icon.png
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: assets/icon/app_icon.png
+  web:
+    generate: true
+    image_path: assets/icon/app_icon.png
+    background_color: "#000000"
+    theme_color: "#2563EB"
+
+flutter_native_splash:
+  color: "#000000"
+  image: assets/icon/app_icon.png
+  android_12:
+    color: "#000000"
+    image: assets/icon/app_icon.png
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/cameras.json
+    - assets/data/giraffe_cameras.json
+    - assets/data/wind_cameras.json
+    - assets/data/blocklist.json
+    - assets/icon/app_icon.png

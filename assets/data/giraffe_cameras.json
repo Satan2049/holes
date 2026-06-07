@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "source": "npch/giraffe-webcams",
+  "sourceUrl": "https://github.com/npch/giraffe-webcams",
+  "license": "CC-BY-4.0",
+  "cameras": [
+    {
+      "id": "giraffe-san-diego-ca",
+      "name": "San Diego Zoo Safari Park — Giraffe Cam",
+      "streamUrl": "https://zssd-kijami.hls.camzonecdn.com/CamzoneStreams/zssd-kijami/playlist.m3u8",
+      "country": "United States",
+      "city": "San Diego, California",
+      "latitude": 33.096,
+      "longitude": -117.001,
+      "category": "outdoor",
+      "streamType": "hls",
+      "tags": [
+        "giraffe",
+        "zoo",
+        "giraffe-webcams",
+        "wildlife"
+      ],
+      "attribution": "San Diego Zoo Safari Park via npch/giraffe-webcams (CC BY 4.0)",
+      "enabled": true
+    }
+  ],
+  "filtered": "2026-06-07",
+  "filter": "live-only"
+}

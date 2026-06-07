@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <title>Holes — Live public camera browser</title>
+  <meta name="description" content="Browse thousands of live public camera streams. Search, filter, favorites — no map, no account. Android and web.">
+  <meta name="theme-color" content="#2563EB">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Holes">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/landing.css">
+
+  <style id="splash-screen-style">
+    html { height: 100%; }
+    body { margin: 0; min-height: 100%; background-color: #000000; }
+    .center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .contain { display: block; width: 100%; height: 100%; object-fit: contain; }
+  </style>
+  <script id="splash-screen-script">
+    function removeSplashFromWeb() {
+      document.getElementById("splash")?.remove();
+      document.body.style.background = "#000000";
+    }
+  </script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- Flutter mounts behind the landing overlay -->
+  <div id="flutter-app" aria-hidden="true"></div>
+
+  <div id="app-loading" aria-live="polite" aria-busy="true">
+    <div class="spinner" role="presentation"></div>
+    <p>Loading camera browser…</p>
+  </div>
+
+  <div id="landing">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="Holes home">
+          <svg width="32" height="32" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="26" r="18" stroke="#38bdf8" stroke-width="3"/>
+            <circle cx="32" cy="26" r="10" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="32" cy="26" r="4" fill="#38bdf8"/>
+            <path d="M26 38 L22 52 L42 52 L38 38 Z" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <div class="brand-name">Holes</div>
+            <div class="brand-tag">Live cameras</div>
+          </div>
+        </a>
+        <nav>
+          <button type="button" class="btn btn-primary" id="launch-header" data-launch-app>
+            Launch app
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="logo-wrap">
+          <svg viewBox="0 0 120 120" fill="none" role="img" aria-label="Holes logo">
+            <circle cx="60" cy="48" r="34" stroke="#38bdf8" stroke-width="4"/>
+            <circle cx="60" cy="48" r="20" stroke="#38bdf8" stroke-width="3"/>
+            <circle cx="60" cy="48" r="8" fill="#38bdf8"/>
+            <path d="M48 72 L40 98 L80 98 L72 72 Z" stroke="#38bdf8" stroke-width="4" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h1>Browse live cameras <span>worldwide</span></h1>
+        <p class="hero-lead">
+          A minimal public camera browser — search, filter, favorites, and random skip.
+          Thousands of HTTPS streams. No map. No account. Data stays on your device.
+        </p>
+        <div class="hero-actions">
+          <button type="button" class="btn btn-primary" id="launch-hero" data-launch-app>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            Launch browser
+          </button>
+          <a class="btn btn-ghost" href="https://github.com/Satan2049/holes" target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">4,700+</span>
+            <span class="stat-label">Live streams</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">HLS</span>
+            <span class="stat-label">Best on Android</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">Local</span>
+            <span class="stat-label">Favorites &amp; prefs</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="features container">
+        <h2 class="section-title">Features</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+            </div>
+            <h3>Search &amp; filter</h3>
+            <p>Find cameras by name, city, country, or tags. Filter by region, category, and stream type.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3>Favorites</h3>
+            <p>Star feeds you like and browse favorites only. Block bad streams with skip &amp; hide.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/>
+              </svg>
+            </div>
+            <h3>Live playback</h3>
+            <p>HLS video on Android. Health badges, fullscreen, and open-in-browser when embeds fail.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Privacy-first</h3>
+            <p>Camera catalog ships with the app. No remote fetch at startup. Public streams only.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="container">
+        <p class="notice">
+          <strong>Web note:</strong> Most traffic cameras use HLS (.m3u8), which Chrome cannot play inside the web app.
+          Use the <strong>Android app</strong> for the best experience, or open individual streams in your browser.
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer container">
+      <nav class="footer-links">
+        <a href="https://github.com/Satan2049/holes/blob/main/README.md">Documentation</a>
+        <a href="https://github.com/Satan2049/holes/blob/main/LICENSE">MIT License</a>
+        <a href="https://github.com/Satan2049/holes/blob/main/CONTRIBUTING.md">Contributing</a>
+      </nav>
+      <p>Public camera streams are for observation only. Respect privacy and local laws.</p>
+      <p>Holes v1.0 — Flutter open source</p>
+    </footer>
+  </div>
+
+  <!-- Native splash while Flutter engine starts -->
+  <picture id="splash">
+    <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
+    <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
+    <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+  </picture>
+
+  <script>
+    (function () {
+      var landing = document.getElementById('landing');
+      var loading = document.getElementById('app-loading');
+      var flutterReady = false;
+      var userLaunched = false;
+
+      function showApp() {
+        userLaunched = true;
+        landing.classList.add('is-hidden');
+        loading.classList.add('is-active');
+        landing.setAttribute('aria-hidden', 'true');
+        document.getElementById('flutter-app').setAttribute('aria-hidden', 'false');
+        if (flutterReady) {
+          loading.classList.remove('is-active');
+        }
+      }
+
+      function onFlutterReady() {
+        flutterReady = true;
+        removeSplashFromWeb();
+        if (userLaunched) {
+          loading.classList.remove('is-active');
+        }
+      }
+
+      document.querySelectorAll('[data-launch-app]').forEach(function (btn) {
+        btn.addEventListener('click', showApp);
+      });
+
+      window.addEventListener('flutter-first-frame', onFlutterReady);
+
+      // Deep link: ?app=1 skips landing (shareable app URL)
+      if (new URLSearchParams(location.search).get('app') === '1') {
+        showApp();
+      }
+    })();
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

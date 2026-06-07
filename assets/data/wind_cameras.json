@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "source": "pme123/pme123-windspotter",
+  "sourceUrl": "https://github.com/pme123/pme123-windspotter",
+  "license": "MIT",
+  "cameras": [],
+  "filtered": "2026-06-07",
+  "filter": "live-only"
+}
