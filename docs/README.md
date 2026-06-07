@@ -1,5 +1,7 @@
 # Holes documentation index
 
+**Public website (GitHub Pages):** [index.html](./index.html) — project homepage served from this `/docs` folder. Not the Flutter app; links to the Android APK on Releases.
+
 | Document | Purpose |
 |----------|---------|
 | [instructions.md](./instructions.md) | Setup, run, build, Android/network notes |

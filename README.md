@@ -33,14 +33,20 @@ flutter run                  # Android — recommended for HLS video
 flutter run -d chrome        # Web — landing page + app (HLS limited in Chrome)
 ```
 
-**Web landing page:** `web/index.html` shows a themed marketing screen; click **Launch browser** to open the Flutter app. Direct link: `?app=1` (e.g. `http://localhost:port/?app=1`).
+### GitHub Pages (project homepage)
 
-Build static web + landing:
+The **landing page** is a static site in **`docs/index.html`** — it explains the project and links to the APK. It is **not** the Flutter app.
 
-```bash
-flutter build web --release
-# Output: build/web/ (deploy to GitHub Pages, Netlify, etc.)
-```
+1. Replace `YOUR_USERNAME` in `docs/index.html` with your GitHub username.
+2. Create a release and attach `app-release.apk` (from `flutter build apk --release`).
+3. On GitHub: **Settings → Pages → Build from branch `main` → folder `/docs`**.
+4. Your site will be at `https://YOUR_USERNAME.github.io/holes/`
+
+| What | Where | Purpose |
+|------|--------|---------|
+| **GitHub Pages site** | `docs/index.html` | Public homepage — download APK, read about the app |
+| **Flutter web app** | `web/index.html` → `build/web/` | Optional; HLS mostly broken in Chrome anyway |
+| **Android app** | `app-release.apk` | What users actually install and use |
 
 **After changing `assets/data/*.json`:** stop the app and full restart (not hot reload).
 

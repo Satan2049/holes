@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holes — Live public camera browser</title>
+  <meta name="description" content="Holes is an open-source Android app to browse thousands of live public camera streams. Search, filter, favorites — no map, no account.">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <div class="page">
+    <header>
+      <div class="container header-row">
+        <a class="brand" href="./">
+          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="26" r="18" stroke="#38bdf8" stroke-width="3"/>
+            <circle cx="32" cy="26" r="10" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="32" cy="26" r="4" fill="#38bdf8"/>
+            <path d="M26 38 L22 52 L42 52 L38 38 Z" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <div class="brand-title">Holes</div>
+            <div class="brand-sub">Open source</div>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#install">Install</a>
+          <a href="README.md">Docs</a>
+          <a class="btn btn-primary" id="download-btn" href="https://github.com/YOUR_USERNAME/holes/releases/latest" target="_blank" rel="noopener">
+            Download APK
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <svg class="logo" viewBox="0 0 120 120" fill="none" role="img" aria-label="Holes logo">
+          <circle cx="60" cy="48" r="34" stroke="#38bdf8" stroke-width="4"/>
+          <circle cx="60" cy="48" r="20" stroke="#38bdf8" stroke-width="3"/>
+          <circle cx="60" cy="48" r="8" fill="#38bdf8"/>
+          <path d="M48 72 L40 98 L80 98 L72 72 Z" stroke="#38bdf8" stroke-width="4" stroke-linejoin="round"/>
+        </svg>
+        <h1>Live public cameras, <em>one tap away</em></h1>
+        <p class="lead">
+          Holes is a Flutter app for Android that browses a bundled catalog of
+          ~4,700 HTTPS live streams — traffic cams, city views, outdoor feeds.
+          Search, filter, star favorites, skip bad feeds.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/YOUR_USERNAME/holes/releases/latest" target="_blank" rel="noopener">
+            Get the Android APK
+          </a>
+          <a class="btn btn-outline" href="https://github.com/YOUR_USERNAME/holes" target="_blank" rel="noopener">
+            Source on GitHub
+          </a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>4,700+</strong><span>Live streams</span></div>
+          <div class="stat"><strong>Offline</strong><span>Catalog bundled</span></div>
+          <div class="stat"><strong>MIT</strong><span>Open source</span></div>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2 class="section-label">Features</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Search &amp; filter</h3>
+            <p>By name, city, country, tags. Country, category, HLS/MJPEG, favorites-only.</p>
+          </article>
+          <article class="card">
+            <h3>Random browse</h3>
+            <p>Shuffle through feeds. Remember last camera. Skip &amp; hide broken streams.</p>
+          </article>
+          <article class="card">
+            <h3>HLS playback</h3>
+            <p>Real video on Android. Health badge, fullscreen, open in browser fallback.</p>
+          </article>
+          <article class="card">
+            <h3>Privacy-first</h3>
+            <p>No account. Favorites and prefs stay on your device. Public streams only.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="install">
+        <h2 class="section-label">Install (Android)</h2>
+        <div class="steps">
+          <ol>
+            <li>Download <strong>app-release.apk</strong> from <a href="https://github.com/YOUR_USERNAME/holes/releases/latest">GitHub Releases</a>.</li>
+            <li>On your phone: allow install from unknown sources / USB (MIUI: <em>Install via USB</em>).</li>
+            <li>Open the APK and install. No Google Play required.</li>
+          </ol>
+        </div>
+        <p class="notice">
+          <strong>What is this site?</strong> This GitHub Pages page is the project homepage — it does not run the app in your browser.
+          Holes is an <strong>Android app</strong>. Build from source: see <a href="instructions.md">instructions.md</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="container">
+      <p>
+        <a href="https://github.com/YOUR_USERNAME/holes">GitHub</a> ·
+        <a href="README.md">Documentation</a> ·
+        <a href="https://github.com/YOUR_USERNAME/holes/blob/main/LICENSE">MIT License</a>
+      </p>
+      <p>Public camera streams are for observation only. Respect privacy and local laws.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -26,7 +26,7 @@ Full improvement plan: **[improvement.md](./improvement.md)**
 
 ## Next (app features — see improvement.md)
 
-- [ ] GitHub publish: create repo, replace `YOUR_USERNAME` in README CI badge, push tags
+- [ ] GitHub publish: create repo, replace `YOUR_USERNAME` in README + `docs/index.html`, enable Pages from `/docs`, upload APK to Releases
 - [ ] Restore `wind_cameras.json` if temp windspotter source available
 
 ## v2 — Streamers (deferred)
