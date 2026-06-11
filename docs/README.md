@@ -4,6 +4,7 @@
 
 | Document | Purpose |
 |----------|---------|
+| [TRUST.md](./TRUST.md) | Verify release SHA256 checksums and VirusTotal scanning |
 | [instructions.md](./instructions.md) | Setup, run, build, Android/network notes |
 | [improvement.md](./improvement.md) | **Improvement plan** — detailed todos (no new cameras) |
 | [todo.md](./todo.md) | Short actionable checklist |

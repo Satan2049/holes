@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Holes — Live public camera browser</title>
-  <meta name="description" content="Holes is an open-source Android app to browse thousands of live public camera streams. Search, filter, favorites — no map, no account.">
+  <meta name="description" content="Open-source Android app to browse ~4,700 live public camera streams. Search, filter, favorites — no map, no account.">
   <meta name="theme-color" content="#2563EB">
+  <meta property="og:title" content="Holes — Live public camera browser">
+  <meta property="og:description" content="Search, filter, and watch thousands of bundled public live streams on Android. MIT licensed.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Satan2049/holes/main/assets/icon/app_icon.png">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Satan2049/holes/main/assets/icon/app_icon.png">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
@@ -16,12 +21,7 @@
     <header>
       <div class="container header-row">
         <a class="brand" href="./">
-          <svg width="36" height="36" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <circle cx="32" cy="26" r="18" stroke="#38bdf8" stroke-width="3"/>
-            <circle cx="32" cy="26" r="10" stroke="#38bdf8" stroke-width="2"/>
-            <circle cx="32" cy="26" r="4" fill="#38bdf8"/>
-            <path d="M26 38 L22 52 L42 52 L38 38 Z" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round"/>
-          </svg>
+          <img class="brand-icon" src="https://raw.githubusercontent.com/Satan2049/holes/main/assets/icon/app_icon.png" width="36" height="36" alt="">
           <div>
             <div class="brand-title">Holes</div>
             <div class="brand-sub">Open source</div>
@@ -29,9 +29,11 @@
         </a>
         <nav class="nav-links">
           <a href="#features">Features</a>
+          <a href="#screenshots">Screenshots</a>
           <a href="#install">Install</a>
+          <a href="#trust">Verify</a>
           <a href="README.md">Docs</a>
-          <a class="btn btn-primary" id="download-btn" href="https://github.com/YOUR_USERNAME/holes/releases/latest" target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="https://github.com/Satan2049/holes/releases/latest" target="_blank" rel="noopener">
             Download APK
           </a>
         </nav>
@@ -40,23 +42,30 @@
 
     <main class="container">
       <section class="hero">
-        <svg class="logo" viewBox="0 0 120 120" fill="none" role="img" aria-label="Holes logo">
-          <circle cx="60" cy="48" r="34" stroke="#38bdf8" stroke-width="4"/>
-          <circle cx="60" cy="48" r="20" stroke="#38bdf8" stroke-width="3"/>
-          <circle cx="60" cy="48" r="8" fill="#38bdf8"/>
-          <path d="M48 72 L40 98 L80 98 L72 72 Z" stroke="#38bdf8" stroke-width="4" stroke-linejoin="round"/>
-        </svg>
+        <img class="logo" src="https://raw.githubusercontent.com/Satan2049/holes/main/assets/icon/app_icon.png" width="96" height="96" alt="Holes logo">
         <h1>Live public cameras, <em>one tap away</em></h1>
         <p class="lead">
-          Holes is a Flutter app for Android that browses a bundled catalog of
+          Holes is an open-source Flutter app for Android that browses a bundled catalog of
           ~4,700 HTTPS live streams — traffic cams, city views, outdoor feeds.
-          Search, filter, star favorites, skip bad feeds.
+          Search, filter, star favorites, skip bad feeds. No map. No account.
         </p>
+        <div class="badges">
+          <a href="https://github.com/Satan2049/holes/actions/workflows/ci.yml" target="_blank" rel="noopener">
+            <img src="https://github.com/Satan2049/holes/actions/workflows/ci.yml/badge.svg" alt="CI status">
+          </a>
+          <a href="https://github.com/Satan2049/holes/releases" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/github/v/release/Satan2049/holes?label=release" alt="Release">
+          </a>
+          <a href="https://github.com/Satan2049/holes/blob/main/LICENSE" target="_blank" rel="noopener">
+            <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License">
+          </a>
+          <img src="https://img.shields.io/badge/Flutter-stable-02569B?logo=flutter&logoColor=white" alt="Flutter">
+        </div>
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://github.com/YOUR_USERNAME/holes/releases/latest" target="_blank" rel="noopener">
+          <a class="btn btn-primary" href="https://github.com/Satan2049/holes/releases/latest" target="_blank" rel="noopener">
             Get the Android APK
           </a>
-          <a class="btn btn-outline" href="https://github.com/YOUR_USERNAME/holes" target="_blank" rel="noopener">
+          <a class="btn btn-outline" href="https://github.com/Satan2049/holes" target="_blank" rel="noopener">
             Source on GitHub
           </a>
         </div>
@@ -86,6 +95,36 @@
             <h3>Privacy-first</h3>
             <p>No account. Favorites and prefs stay on your device. Public streams only.</p>
           </article>
+          <article class="card">
+            <h3>Onboarding</h3>
+            <p>Choose stream types and block categories on first launch.</p>
+          </article>
+          <article class="card">
+            <h3>Blocklist</h3>
+            <p>Bundled URL blocklist and per-user skip/hide for bad feeds.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="screenshots">
+        <h2 class="section-label">Screenshots</h2>
+        <div class="screenshots-grid">
+          <figure class="screenshot-card">
+            <img src="https://raw.githubusercontent.com/Satan2049/holes/main/assets/screenshots/discover.jpg" alt="Discover screen — browse live camera streams" loading="lazy" width="360" height="780">
+            <figcaption>Discover</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="https://raw.githubusercontent.com/Satan2049/holes/main/assets/screenshots/filters.jpg" alt="Filters screen — country, category, stream type" loading="lazy" width="360" height="780">
+            <figcaption>Filters</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="https://raw.githubusercontent.com/Satan2049/holes/main/assets/screenshots/settings.jpg" alt="Settings screen — preferences and ethics" loading="lazy" width="360" height="780">
+            <figcaption>Settings</figcaption>
+          </figure>
+        </div>
+        <div class="demo-wrap">
+          <h3 class="demo-title">Demo</h3>
+          <img class="demo-gif" src="https://raw.githubusercontent.com/Satan2049/holes/main/assets/screenshots/demo.gif" alt="Holes app demo — browse, filter, and play live streams" loading="lazy" width="320" height="640">
         </div>
       </section>
 
@@ -93,7 +132,8 @@
         <h2 class="section-label">Install (Android)</h2>
         <div class="steps">
           <ol>
-            <li>Download <strong>app-release.apk</strong> from <a href="https://github.com/YOUR_USERNAME/holes/releases/latest">GitHub Releases</a>.</li>
+            <li>Download <strong>app-release.apk</strong> from <a href="https://github.com/Satan2049/holes/releases/latest">GitHub Releases</a>.</li>
+            <li>Verify the SHA256 checksum (see below) before installing.</li>
             <li>On your phone: allow install from unknown sources / USB (MIUI: <em>Install via USB</em>).</li>
             <li>Open the APK and install. No Google Play required.</li>
           </ol>
@@ -103,13 +143,36 @@
           Holes is an <strong>Android app</strong>. Build from source: see <a href="instructions.md">instructions.md</a>.
         </p>
       </section>
+
+      <section id="trust">
+        <h2 class="section-label">Verify your download</h2>
+        <div class="trust-grid">
+          <article class="card trust-card">
+            <h3>SHA256 checksum</h3>
+            <p>Compare your downloaded APK against the published hash in <a href="https://github.com/Satan2049/holes/blob/main/SHA256.txt">SHA256.txt</a>.</p>
+            <pre class="hash-box" tabindex="0"><code>9ec0d369aca28e0b981c453a9c08f18094cba762ce437aba1945d3e176983fe5  app-release.apk</code></pre>
+            <p class="trust-hint">Windows: <code>Get-FileHash -Path app-release.apk -Algorithm SHA256</code></p>
+            <a class="btn btn-outline btn-sm" href="TRUST.md">Full verification guide</a>
+          </article>
+          <article class="card trust-card">
+            <h3>VirusTotal scan</h3>
+            <p>The v1.0.0 release APK has been scanned — <strong>no malicious detections</strong>.</p>
+            <a class="btn btn-outline btn-sm" href="https://www.virustotal.com/gui/file/9ec0d369aca28e0b981c453a9c08f18094cba762ce437aba1945d3e176983fe5?nocache=1" target="_blank" rel="noopener">
+              View VirusTotal report
+            </a>
+            <p class="trust-hint">If your file's hash matches above, you're viewing the same binary.</p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="container">
       <p>
-        <a href="https://github.com/YOUR_USERNAME/holes">GitHub</a> ·
+        <a href="https://github.com/Satan2049/holes">GitHub</a> ·
         <a href="README.md">Documentation</a> ·
-        <a href="https://github.com/YOUR_USERNAME/holes/blob/main/LICENSE">MIT License</a>
+        <a href="TRUST.md">Trust &amp; verify</a> ·
+        <a href="https://github.com/Satan2049/holes/blob/main/SECURITY.md">Security</a> ·
+        <a href="https://github.com/Satan2049/holes/blob/main/LICENSE">MIT License</a>
       </p>
       <p>Public camera streams are for observation only. Respect privacy and local laws.</p>
     </footer>

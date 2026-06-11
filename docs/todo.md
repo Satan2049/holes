@@ -24,11 +24,6 @@ Full improvement plan: **[improvement.md](./improvement.md)**
 - [x] Release APK documented (`flutter build apk --release`)
 - [x] GitHub release prep (README, LICENSE, CI, CONTRIBUTING, unit tests)
 
-## Next (app features — see improvement.md)
-
-- [ ] GitHub publish: create repo, replace `YOUR_USERNAME` in README + `docs/index.html`, enable Pages from `/docs`, upload APK to Releases
-- [ ] Restore `wind_cameras.json` if temp windspotter source available
-
 ## v2 — Streamers (deferred)
 
 See [improvement.md § v2 Streamers](./improvement.md#v2--streamer-feeds-deferred).

@@ -5,17 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="description" content="Holes — live public camera browser (Flutter web build)">
+  <meta name="description" content="Holes — open-source live public camera browser. Search, filter, and watch bundled streams. Android recommended for HLS playback.">
   <meta name="theme-color" content="#2563EB">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Holes">
+  <meta property="og:title" content="Holes — Live public camera browser">
+  <meta property="og:description" content="Browse ~4,700 bundled public live streams. Search, filter, favorites — no map, no account.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="icons/Icon-512.png">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <link rel="manifest" href="manifest.json">
-  <title>Holes</title>
+  <title>Holes — Live public camera browser</title>
   <style id="splash-screen-style">
     html { height: 100%; }
-    body { margin: 0; min-height: 100%; background-color: #000000; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      background-color: #000000;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
     .center {
       margin: 0;
       position: absolute;
@@ -24,12 +33,58 @@
       transform: translate(-50%, -50%);
     }
     .contain { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .web-notice {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      padding: 0.65rem 1rem;
+      background: rgba(10, 10, 12, 0.92);
+      border-top: 1px solid #1e2a3a;
+      color: #94a3b8;
+      font-size: 0.78rem;
+      text-align: center;
+      line-height: 1.45;
+      backdrop-filter: blur(8px);
+    }
+    .web-notice a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .web-notice a:hover { text-decoration: underline; }
+    .web-notice-dismiss {
+      margin-left: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      background: transparent;
+      border: 1px solid #1e2a3a;
+      border-radius: 4px;
+      color: #64748b;
+      font-size: 0.72rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .web-notice-dismiss:hover { color: #f8fafc; border-color: #38bdf8; }
+    .web-notice.hidden { display: none; }
   </style>
   <script id="splash-screen-script">
     function removeSplashFromWeb() {
       document.getElementById("splash")?.remove();
       document.body.style.background = "#000000";
     }
+    function dismissWebNotice() {
+      var el = document.getElementById("web-notice");
+      if (el) el.classList.add("hidden");
+      try { sessionStorage.setItem("holes-web-notice-dismissed", "1"); } catch (e) {}
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      try {
+        if (sessionStorage.getItem("holes-web-notice-dismissed") === "1") {
+          document.getElementById("web-notice")?.classList.add("hidden");
+        }
+      } catch (e) {}
+    });
   </script>
 </head>
 <body>
@@ -38,6 +93,23 @@
     <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
     <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
   </picture>
+
+  <noscript>
+    <div style="max-width:32rem;margin:4rem auto;padding:0 1.5rem;color:#f8fafc;font-family:system-ui,sans-serif;text-align:center;">
+      <h1 style="color:#38bdf8;">Holes</h1>
+      <p style="color:#94a3b8;">JavaScript is required for the web preview. For the full Android experience, download the APK from GitHub Releases.</p>
+      <p><a style="color:#2563eb;" href="https://github.com/Satan2049/holes/releases/latest">Download APK</a> ·
+         <a style="color:#2563eb;" href="https://satan2049.github.io/holes/">Project homepage</a></p>
+    </div>
+  </noscript>
+
+  <div id="web-notice" class="web-notice" role="status">
+    Web preview — most HLS streams won't play in Chrome.
+    <a href="https://github.com/Satan2049/holes/releases/latest" target="_blank" rel="noopener">Get the Android APK</a>
+    · <a href="https://satan2049.github.io/holes/#trust" target="_blank" rel="noopener">Verify download</a>
+    <button type="button" class="web-notice-dismiss" onclick="dismissWebNotice()" aria-label="Dismiss notice">Dismiss</button>
+  </div>
+
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

@@ -1,0 +1,6 @@
+# SHA256 checksums for Holes release assets
+# Release v1.0.0 — https://github.com/Satan2049/holes/releases/tag/v.1.0.0
+# Regenerate: .\scripts\generate-sha256.ps1
+# Verify:     docs/TRUST.md
+
+9ec0d369aca28e0b981c453a9c08f18094cba762ce437aba1945d3e176983fe5  app-release.apk
